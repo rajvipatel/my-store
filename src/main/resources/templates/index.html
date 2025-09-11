@@ -4,33 +4,55 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShopEase - Modern E-commerce Store</title>
+    <title>FASHION - Modern Fashion Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body class="min-h-screen bg-gray-50">
 <!-- Header -->
-<header class="fixed top-0 left-0 right-0 bg-white shadow-md py-4 z-50">
+<header class="fixed top-0 left-0 right-0 bg-yellow-400 shadow-md py-4 z-50">
     <div class="container mx-auto px-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-600">ShopEase</h1>
-        <button id="cart-button" class="relative p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span id="cart-count" class="absolute -top-1 -right-1 bg-blue-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
-        </button>
+        <h1 class="text-2xl font-bold text-black tracking-wider">FASHION</h1>
+        <div class="flex items-center space-x-6">
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-black">
+                <a href="#" class="hover:text-gray-700">NEW</a>
+                <a href="#" class="hover:text-gray-700">CLOTHING</a>
+                <a href="#" class="hover:text-gray-700">SHOES</a>
+                <a href="#" class="hover:text-gray-700">WATCHES</a>
+                <a href="#" class="hover:text-gray-700">WALLETS</a>
+                <a href="#" class="hover:text-gray-700">LOOKBOOK</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="text-black hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="text-black hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+                <button id="cart-button" class="relative p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-black text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
     </div>
 </header>
 
 <!-- Hero Section -->
-<section class="pt-24 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50">
+<section class="pt-24 pb-12 bg-gray-100">
     <div class="container mx-auto px-4">
         <div class="max-w-2xl">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                Shop the Latest <span class="block text-blue-600">Premium Products</span>
+                Discover the Latest <span class="block text-yellow-500">Fashion Trends</span>
             </h2>
             <p class="text-lg text-gray-600 mb-8">
-                Discover our curated collection of high-quality items designed to enhance your lifestyle.
+                Explore our curated collection of premium fashion items designed to elevate your style.
             </p>
         </div>
     </div>
@@ -42,130 +64,104 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Product 1 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Premium Wireless Headphones" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Unisex Cotton Hoodie" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Premium Wireless Headphones</h3>
-                    <p class="text-blue-600 font-bold mb-2">$199.99</p>
-                    <p class="text-gray-600 mb-4">Immersive sound quality with noise cancellation technology.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 1, "name": "Premium Wireless Headphones", "price": 199.99, "imageUrl": "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Unisex Cotton Hoodie</h3>
+                    <p class="text-gray-800 font-bold mb-2">$65.00</p>
+                    <p class="text-gray-600 mb-4">Black / Medium</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 1, "name": "Unisex Cotton Hoodie", "price": 65.00, "imageUrl": "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 2 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smart Watch Series 7" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Classic Baseball Cap" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Smart Watch Series 7</h3>
-                    <p class="text-blue-600 font-bold mb-2">$349.99</p>
-                    <p class="text-gray-600 mb-4">Track your fitness goals and stay connected on the go.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 2, "name": "Smart Watch Series 7", "price": 349.99, "imageUrl": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Classic Baseball Cap</h3>
+                    <p class="text-gray-800 font-bold mb-2">$25.00</p>
+                    <p class="text-gray-600 mb-4">Grey / Medium</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 2, "name": "Classic Baseball Cap", "price": 25.00, "imageUrl": "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 3 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Leather Messenger Bag" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Denim Jacket" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Leather Messenger Bag</h3>
-                    <p class="text-blue-600 font-bold mb-2">$129.99</p>
-                    <p class="text-gray-600 mb-4">Handcrafted genuine leather bag for your daily essentials.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 3, "name": "Leather Messenger Bag", "price": 129.99, "imageUrl": "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Denim Jacket</h3>
+                    <p class="text-gray-800 font-bold mb-2">$85.00</p>
+                    <p class="text-gray-600 mb-4">Classic blue denim with vintage wash finish.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 3, "name": "Denim Jacket", "price": 85.00, "imageUrl": "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 4 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Minimalist Desk Lamp" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Designer Sunglasses" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Minimalist Desk Lamp</h3>
-                    <p class="text-blue-600 font-bold mb-2">$59.99</p>
-                    <p class="text-gray-600 mb-4">Adjustable LED lamp with touch controls and multiple brightness settings.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 4, "name": "Minimalist Desk Lamp", "price": 59.99, "imageUrl": "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Designer Sunglasses</h3>
+                    <p class="text-gray-800 font-bold mb-2">$120.00</p>
+                    <p class="text-gray-600 mb-4">UV protection with premium polarized lenses.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 4, "name": "Designer Sunglasses", "price": 120.00, "imageUrl": "https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 5 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ceramic Coffee Mug Set" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1456706/pexels-photo-1456706.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Leather Wallet" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Ceramic Coffee Mug Set</h3>
-                    <p class="text-blue-600 font-bold mb-2">$39.99</p>
-                    <p class="text-gray-600 mb-4">Set of 4 hand-painted ceramic mugs, dishwasher safe.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 5, "name": "Ceramic Coffee Mug Set", "price": 39.99, "imageUrl": "https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Leather Wallet</h3>
+                    <p class="text-gray-800 font-bold mb-2">$45.00</p>
+                    <p class="text-gray-600 mb-4">Genuine leather bifold wallet with RFID protection.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 5, "name": "Leather Wallet", "price": 45.00, "imageUrl": "https://images.pexels.com/photos/1456706/pexels-photo-1456706.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 6 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/1706694/pexels-photo-1706694.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Portable Bluetooth Speaker" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Leather Messenger Bag" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Portable Bluetooth Speaker</h3>
-                    <p class="text-blue-600 font-bold mb-2">$79.99</p>
-                    <p class="text-gray-600 mb-4">Waterproof speaker with 20-hour battery life and rich sound.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 6, "name": "Portable Bluetooth Speaker", "price": 79.99, "imageUrl": "https://images.pexels.com/photos/1706694/pexels-photo-1706694.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Leather Messenger Bag</h3>
+                    <p class="text-gray-800 font-bold mb-2">$89.00</p>
+                    <p class="text-gray-600 mb-4">Handcrafted genuine leather bag for your daily essentials.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 6, "name": "Leather Messenger Bag", "price": 89.00, "imageUrl": "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 7 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lightweight Travel Backpack" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fashion Watch" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Lightweight Travel Backpack</h3>
-                    <p class="text-blue-600 font-bold mb-2">$89.99</p>
-                    <p class="text-gray-600 mb-4">Durable backpack with multiple compartments and laptop sleeve.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 7, "name": "Lightweight Travel Backpack", "price": 89.99, "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Fashion Watch</h3>
+                    <p class="text-gray-800 font-bold mb-2">$150.00</p>
+                    <p class="text-gray-600 mb-4">Elegant timepiece with leather strap and gold accents.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 7, "name": "Fashion Watch", "price": 150.00, "imageUrl": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
             </div>
             <!-- Product 8 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/1188649/pexels-photo-1188649.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Stainless Steel Water Bottle" class="w-full h-48 object-cover">
+                <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Casual T-Shirt" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Stainless Steel Water Bottle</h3>
-                    <p class="text-blue-600 font-bold mb-2">$29.99</p>
-                    <p class="text-gray-600 mb-4">Vacuum insulated bottle that keeps drinks cold for 24 hours.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 8, "name": "Stainless Steel Water Bottle", "price": 29.99, "imageUrl": "https://images.pexels.com/photos/1188649/pexels-photo-1188649.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-            <!-- Product 9 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wireless Charging Pad" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Wireless Charging Pad</h3>
-                    <p class="text-blue-600 font-bold mb-2">$49.99</p>
-                    <p class="text-gray-600 mb-4">Fast-charging wireless pad compatible with all Qi-enabled devices.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 9, "name": "Wireless Charging Pad", "price": 49.99, "imageUrl": "https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-            <!-- Product 10 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Scented Soy Candle" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="font-medium text-lg mb-1">Scented Soy Candle</h3>
-                    <p class="text-blue-600 font-bold mb-2">$19.99</p>
-                    <p class="text-gray-600 mb-4">Hand-poured soy candle with essential oils, 40-hour burn time.</p>
-                    <button class="add-to-cart w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-                            data-product='{"id": 10, "name": "Scented Soy Candle", "price": 19.99, "imageUrl": "https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
+                    <h3 class="font-medium text-lg mb-1">Casual T-Shirt</h3>
+                    <p class="text-gray-800 font-bold mb-2">$35.00</p>
+                    <p class="text-gray-600 mb-4">Soft cotton blend with modern fit and premium quality.</p>
+                    <button class="add-to-cart w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition-colors"
+                            data-product='{"id": 8, "name": "Casual T-Shirt", "price": 35.00, "imageUrl": "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800"}'>
                         Add to Cart
                     </button>
                 </div>
@@ -180,7 +176,7 @@
 <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-lg transform translate-x-full transition-transform z-50">
     <div class="flex flex-col h-full">
         <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-            <h2 class="text-xl font-bold">Your Cart</h2>
+            <h2 class="text-xl font-bold">Your basket</h2>
             <button id="close-cart" class="text-gray-500 hover:text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -197,7 +193,7 @@
                 <span>Total</span>
                 <span id="cart-total">$0.00</span>
             </div>
-            <a href="/checkout" class="block w-full bg-blue-600 text-white text-center py-3 rounded-md hover:bg-blue-700 transition-colors">Checkout</a>
+            <a href="/checkout" class="block w-full bg-black text-white text-center py-3 rounded-md hover:bg-gray-800 transition-colors">Checkout</a>
         </div>
     </div>
 </div>
