@@ -1,8 +1,8 @@
 package com.exampleshopease.controller;
 
 import com.example.shopease.model.RequestData;
-import com.example.service.CaptureContextService;
-import com.example.service.JwtProcessorService;
+import com.example.shopease.service.CaptureContextService;
+import com.example.shopease.service.JwtProcessorService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
