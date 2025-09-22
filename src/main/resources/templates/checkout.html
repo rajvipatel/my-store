@@ -6,6 +6,11 @@
     <title>Checkout - ShopEase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="/css/styles.css" rel="stylesheet">
+
+    <!-- Unified Checkout Library -->
+<script th:src="${clientLibrary}"
+        th:integrity="${clientLibraryIntegrity}"
+        crossorigin="anonymous"></script>
 </head>
 <body class="min-h-screen bg-gray-50 py-12">
     <div class="container mx-auto px-4 max-w-3xl">
@@ -27,9 +32,6 @@
                 </div>
             </div>
 
-            <a href="/payment" class="block w-full mt-8 bg-blue-600 text-white text-center font-medium py-3 px-6 rounded-md hover:bg-blue-700 transition-colors">
-                Next Step
-            </a>
         </div>
     </div>
 
@@ -56,5 +58,140 @@
             `).join('');
         });
     </script>
+    
+    <div class="container">
+    <div id="buttonPaymentListContainer">
+    </div>
+    <div id="embeddedPaymentContainer"></div>
+    <input type="hidden" id="transientToken" name="transientToken" />
+    <input type="hidden" id="jwt" th:value="${jwt}" />
+</div>
+
+<!-- Payment Confirmation Modal -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="payment-success">
+            <h2>Payment Successful!</h2>
+        </div>
+        <div class="payment-details">
+            <h3>Payment Details</h3>
+            <p><strong>Status:</strong> <span id="paymentStatus"></span></p>
+            <p><strong>Message:</strong> <span id="paymentMessage"></span></p>
+            <p><strong>Transaction ID:</strong> <span id="transactionId"></span></p>
+            <p><strong>Amount:</strong> <span id="paymentAmount"></span></p>
+            <p><strong>Currency:</strong> <span id="paymentCurrency"></span></p>
+        </div>
+        <div class="next-steps">
+            <h3>Next Steps</h3>
+            <ul>
+                <li>Your payment has been processed successfully.</li>
+                <li>You can refer to the <a href="https://developer.cybersource.com/docs/cybs/en-us/unified-checkout/developer/all/rest/unified-checkout/uc-intro.html" target="_blank">Unified checkout documentation</a> for more details.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var showArgs = {
+        containers: {
+            paymentSelection: "#buttonPaymentListContainer"
+        }
+    };
+    var jwt = document.getElementById("jwt").value;
+
+    // Function to parse JWT
+    function parseJwt(token) {
+        try {
+            // For JWTs returned by the payment system, we need to extract the payload
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            return JSON.parse(jsonPayload);
+        } catch (e) {
+            console.error("Error parsing JWT:", e);
+            return null;
+        }
+    }
+
+    // Function to display the modal with payment details
+    function showPaymentModal(paymentDetails) {
+        // Get the modal element
+        const modal = document.getElementById("paymentModal");
+
+        // Set payment details in the modal
+        document.getElementById("paymentStatus").textContent = paymentDetails.status || paymentDetails.outcome || "COMPLETED";
+        document.getElementById("paymentMessage").textContent = paymentDetails.message || "Transaction processed";
+
+        // Get transaction ID from processor information if available
+        const transactionId = paymentDetails.details &&
+            paymentDetails.details.processorInformation &&
+            paymentDetails.details.processorInformation.transactionId ||
+            paymentDetails.id ||
+            "N/A";
+        document.getElementById("transactionId").textContent = transactionId;
+
+        // Get amount information if available
+        if (paymentDetails.details &&
+            paymentDetails.details.orderInformation &&
+            paymentDetails.details.orderInformation.amountDetails) {
+            const amountDetails = paymentDetails.details.orderInformation.amountDetails;
+            document.getElementById("paymentAmount").textContent = amountDetails.totalAmount || amountDetails.authorizedAmount || "N/A";
+            document.getElementById("paymentCurrency").textContent = amountDetails.currency || "USD";
+        } else {
+            document.getElementById("paymentAmount").textContent = "N/A";
+            document.getElementById("paymentCurrency").textContent = "N/A";
+        }
+
+        // Display the modal
+        modal.style.display = "block";
+
+        // Get the <span> element that closes the modal
+        const span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
+    // Wrap the code in an async function and immediately invoke it
+    async function processPayment() {
+        try {
+            const accept = await Accept(jwt);
+            const up = await accept.unifiedPayments(true);
+            const tt = await up.show(showArgs);
+            const completeResponse = await up.complete(tt);
+
+            console.log(completeResponse); // merchant logic for handling complete response
+
+            // Parse the JWT from the complete response
+            const parsedResponse = parseJwt(completeResponse);
+            if (parsedResponse) {
+                // Show the payment confirmation modal with the parsed details
+                showPaymentModal(parsedResponse);
+            } else {
+                console.error("Failed to parse payment response");
+            }
+        } catch (error) {
+            // merchant logic for handling issues
+            console.error("something went wrong: " + error);
+        }
+    }
+
+    // Call the async function
+    processPayment();
+</script>
 </body>
 </html>
