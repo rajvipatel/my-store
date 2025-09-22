@@ -1,4 +1,4 @@
-package com.exampleshopease.controller;
+package com.example.shopease.controller;
 
 import com.example.shopease.model.RequestData;
 import com.example.shopease.service.CaptureContextService;
