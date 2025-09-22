@@ -1,6 +1,6 @@
 package com.exampleshopease.controller;
 
-import com.example.model.RequestData;
+import com.example.shopease.model.RequestData;
 import com.example.service.CaptureContextService;
 import com.example.service.JwtProcessorService;
 import com.fasterxml.jackson.databind.JsonNode;
