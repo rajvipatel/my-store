@@ -32,6 +32,12 @@
                 </div>
             </div>
 
+    <div class="container">
+    <div id="buttonPaymentListContainer">
+    </div>
+    <div id="embeddedPaymentContainer"></div>
+    <input type="hidden" id="transientToken" name="transientToken" />
+    <input type="hidden" id="jwt" th:value="${jwt}" />
         </div>
     </div>
 
@@ -59,12 +65,7 @@
         });
     </script>
     
-    <div class="container">
-    <div id="buttonPaymentListContainer">
-    </div>
-    <div id="embeddedPaymentContainer"></div>
-    <input type="hidden" id="transientToken" name="transientToken" />
-    <input type="hidden" id="jwt" th:value="${jwt}" />
+ 
 </div>
 
 <!-- Payment Confirmation Modal -->
